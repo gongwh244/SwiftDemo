@@ -48,6 +48,12 @@ class IntroViewController: UIViewController,UIScrollViewDelegate {
     
     func enterAction(){
         print("enter")
+        let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+        
+        let rootVC:ViewController = ViewController()
+        let awindow = UIApplication.shared.windows[0]
+        awindow.rootViewController = rootVC
+        UserDefaults.standard.setValue(versionString, forKey: "oldVersion")
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

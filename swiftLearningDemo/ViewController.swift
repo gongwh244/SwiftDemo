@@ -19,7 +19,6 @@ enum CompassPoint {
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
-    var navigationView: UIView!
     var listTableVIew: UITableView!
     
     var editButton:UIButton!
@@ -28,11 +27,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
-        self.navigationView.backgroundColor = UIColor.red
-        self.view.addSubview(self.navigationView)
+        self.edgesForExtendedLayout = [.top,.bottom]
+//        self.navigationController?.navigationBar.isTranslucent = false
         
-        listTableVIew = UITableView.init(frame: CGRect.init(x: 0, y: 64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64), style: .plain)
+        listTableVIew = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), style: .plain)
         listTableVIew.delegate = self;
         listTableVIew.dataSource = self;
         listTableVIew.tableFooterView = UIView.init()
@@ -43,7 +41,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 13
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,8 +53,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "cell")
         if cell == nil {
             cell = UITableViewCell.init(style:.default, reuseIdentifier: "cell")
+            cell?.backgroundColor = .white
         }
-        cell?.textLabel?.text = "abc"
+        cell?.textLabel?.text = "哈哈哈"
+        cell?.textLabel?.textColor = .red
+        cell?.textLabel?.backgroundColor = .black
         cell?.selectionStyle = .none
         return cell!
     }
@@ -66,7 +67,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ViewController()
+        vc.title = "abc"
         
+        self.navigationController?.pushViewController(vc, animated:true)
     }
 }
 

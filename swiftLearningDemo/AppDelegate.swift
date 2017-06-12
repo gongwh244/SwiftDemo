@@ -12,21 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var root_navigationController: UINavigationController?
+    var root_tabBarController: UITabBarController?
+    
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         var oldVersionString = UserDefaults.standard.object(forKey: "oldVersion") as? String
-        oldVersionString = "1.0.1"
+        oldVersionString = "1.0.0"
         
         if versionString == oldVersionString {
             
             print("非新版本")
-            let rootVC:ViewController = ViewController()
-            window = UIWindow.init(frame: UIScreen.main.bounds)
-            window?.rootViewController = rootVC
-            window?.makeKeyAndVisible()
+            makeRootViewController()
+            
         }else{
             
             let rootVC:IntroViewController = IntroViewController()
@@ -35,10 +37,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             print("新版本")
         }
-        
-        
         return true
     }
+    
+    func makeRootViewController(){
+        
+        
+        let vc0 = ViewController()
+        let vc1 = UINavigationController.init(rootViewController: vc0)
+        vc1.navigationBar.barStyle = .black
+        vc1.title = "微信"
+        vc1.tabBarItem = UITabBarItem.init(title: "微信", image: UIImage.init(named: "tabbar_mainframe"), selectedImage: UIImage.init(named: "tabbar_mainframeHL"))
+
+        
+        let vc2 = ViewController()
+        vc2.title = "通讯录"
+        vc2.tabBarItem = UITabBarItem.init(title: "通讯录", image: UIImage.init(named: "tabbar_contacts"), selectedImage: UIImage.init(named: "tabbar_contactsHL"))
+
+        
+        let vc3 = ViewController()
+        vc3.title = "发现"
+        vc3.tabBarItem = UITabBarItem.init(title: "发现", image: UIImage.init(named: "tabbar_discover"), selectedImage: UIImage.init(named: "tabbar_discoverHL"))
+
+        
+        let vc4 = ViewController()
+        vc4.title = "我"
+        vc4.tabBarItem = UITabBarItem.init(title: "我", image: UIImage.init(named: "tabbar_me"), selectedImage: UIImage.init(named: "tabbar_meHL"))
+        
+        root_tabBarController = UITabBarController.init()
+        root_tabBarController?.viewControllers = [vc1,vc2,vc3,vc4]
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        window?.rootViewController = root_tabBarController
+        window?.makeKeyAndVisible()
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
