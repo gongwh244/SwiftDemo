@@ -26,11 +26,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .red
         
-        self.edgesForExtendedLayout = [.top,.bottom]
-//        self.navigationController?.navigationBar.isTranslucent = false
-        
-        listTableVIew = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), style: .plain)
+        listTableVIew = UITableView.init(frame: CGRect.init(x: 0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), style: .plain)
         listTableVIew.delegate = self;
         listTableVIew.dataSource = self;
         listTableVIew.tableFooterView = UIView.init()
@@ -40,8 +38,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         editButton.addTarget(self, action: #selector(makeUI), for: .touchUpInside)
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 13
+        return 23
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,10 +67,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ViewController()
-        vc.title = "abc"
         
-        self.navigationController?.pushViewController(vc, animated:true)
+        let detailVc = DetailViewController();
+        detailVc.title = "abc"
+        detailVc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVc, animated:true)
+        
+        print("tableview.frame = \(NSStringFromCGRect(listTableVIew.frame))")
+        print("tableview.contentInset = \(NSStringFromUIEdgeInsets(listTableVIew.contentInset))")
     }
 }
 

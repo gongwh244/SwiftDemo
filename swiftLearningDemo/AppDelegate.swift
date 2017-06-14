@@ -40,10 +40,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+//    func makeRootViewController(){
+//        
+//        
+//        let vc1 = ViewController()
+////        let vc1 = UINavigationController.init(rootViewController: vc0)
+////        vc1.navigationBar.barStyle = .black
+//        vc1.title = "微信"
+//        vc1.tabBarItem = UITabBarItem.init(title: "微信", image: UIImage.init(named: "tabbar_mainframe"), selectedImage: UIImage.init(named: "tabbar_mainframeHL"))
+//        
+//        
+//        let vc2 = ViewController()
+//        vc2.title = "通讯录"
+//        vc2.tabBarItem = UITabBarItem.init(title: "通讯录", image: UIImage.init(named: "tabbar_contacts"), selectedImage: UIImage.init(named: "tabbar_contactsHL"))
+//        
+//        
+//        let vc3 = ViewController()
+//        vc3.title = "发现"
+//        vc3.tabBarItem = UITabBarItem.init(title: "发现", image: UIImage.init(named: "tabbar_discover"), selectedImage: UIImage.init(named: "tabbar_discoverHL"))
+//        
+//        
+//        let vc4 = ViewController()
+//        vc4.title = "我"
+//        vc4.tabBarItem = UITabBarItem.init(title: "我", image: UIImage.init(named: "tabbar_me"), selectedImage: UIImage.init(named: "tabbar_meHL"))
+//        
+//        root_tabBarController = UITabBarController.init()
+////        root_tabBarController?.title = "微信"
+////        root_tabBarController?.tabBar.tintColor = UIColor.init(red: 26/255.0, green: 178/255.0, blue: 10/255.0, alpha: 1)
+//        root_tabBarController?.viewControllers = [UINavigationController.init(rootViewController: vc1),
+//                                                  UINavigationController.init(rootViewController: vc2),
+//                                                  UINavigationController.init(rootViewController: vc3),
+//                                                  UINavigationController.init(rootViewController: vc4)]
+//        
+////        root_navigationController = UINavigationController.init(rootViewController: root_tabBarController!)
+////        root_navigationController?.navigationBar.tintColor = UIColor.init(red: 26/255.0, green: 178/255.0, blue: 10/255.0, alpha: 1)
+//        
+//        
+//        window = UIWindow.init(frame: UIScreen.main.bounds)
+//        window?.rootViewController = root_tabBarController
+//        window?.makeKeyAndVisible()
+//    }
+    
     func makeRootViewController(){
         
         
         let vc0 = ViewController()
+        vc0.title = "abc"
         let vc1 = UINavigationController.init(rootViewController: vc0)
         vc1.navigationBar.barStyle = .black
         vc1.title = "微信"
@@ -51,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         let vc2 = ViewController()
+        
         vc2.title = "通讯录"
         vc2.tabBarItem = UITabBarItem.init(title: "通讯录", image: UIImage.init(named: "tabbar_contacts"), selectedImage: UIImage.init(named: "tabbar_contactsHL"))
 

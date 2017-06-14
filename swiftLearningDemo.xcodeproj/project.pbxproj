@@ -16,6 +16,7 @@
 		F06E893D1EEBE73C00F66351 /* LiveBootstrapper_4.png in Resources */ = {isa = PBXBuildFile; fileRef = F06E893A1EEBE73C00F66351 /* LiveBootstrapper_4.png */; };
 		F06E893F1EEBE87D00F66351 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E893E1EEBE87D00F66351 /* IntroViewController.swift */; };
 		F06E89411EEBF71F00F66351 /* MacroDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E89401EEBF71F00F66351 /* MacroDefinition.swift */; };
+		F070E46C1EEFD1C80039CA71 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F070E46A1EEFD1C70039CA71 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F06E893E1EEBE87D00F66351 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		F06E89401EEBF71F00F66351 /* MacroDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacroDefinition.swift; sourceTree = "<group>"; };
 		F06E89421EEC264500F66351 /* swiftLearningDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "swiftLearningDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		F070E46A1EEFD1C70039CA71 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F06E7F5A1EE0087700EBF10D /* AppDelegate.swift */,
 				F06E7F5C1EE0087700EBF10D /* ViewController.swift */,
 				F06E893E1EEBE87D00F66351 /* IntroViewController.swift */,
+				F070E46A1EEFD1C70039CA71 /* DetailViewController.swift */,
 				F06E89401EEBF71F00F66351 /* MacroDefinition.swift */,
 				F06E7F631EE0087700EBF10D /* LaunchScreen.storyboard */,
 				F06E7F661EE0087700EBF10D /* Info.plist */,
@@ -164,6 +167,7 @@
 			files = (
 				F06E7F5D1EE0087700EBF10D /* ViewController.swift in Sources */,
 				F06E7F5B1EE0087700EBF10D /* AppDelegate.swift in Sources */,
+				F070E46C1EEFD1C80039CA71 /* DetailViewController.swift in Sources */,
 				F06E893F1EEBE87D00F66351 /* IntroViewController.swift in Sources */,
 				F06E89411EEBF71F00F66351 /* MacroDefinition.swift in Sources */,
 			);
